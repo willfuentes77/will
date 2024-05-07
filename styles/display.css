@@ -14,3 +14,9 @@
 h3{
     margin: 20px;
 }
+
+.tabla
+{
+    border:1px solid #00ff22;
+    width: 50%;
+}

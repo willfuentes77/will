@@ -63,6 +63,7 @@ function registrar(){
         students.push(nuevoAlumno);
         console.log(students);
         displayCards();
+        displayTable();
     }else{
         alert("Por favor completa los campos");
     }
@@ -72,6 +73,7 @@ function init(){
     let student1 = new Student("Samuel",99,"M","sam@gmail.com","Arquitectura","123456",10,10,9);
     students.push(student1);
     displayCards();
+    displayTable();
 }
 
 window.onload=init;// espera a rendirizar el HTML
