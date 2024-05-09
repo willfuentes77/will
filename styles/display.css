@@ -15,8 +15,56 @@ h3{
     margin: 20px;
 }
 
-.tabla
-{
-    border:1px solid #00ff22;
-    width: 50%;
+.tabla {
+    width: 25%;
+    /*border: 1px solid white;*/
+}   
+
+td,
+th {
+padding: 5px;
+border: 1px solid white;
+color:black;
 }
+
+caption{
+    background-color: #316AC5; 
+    color: white; 
+    font-weight: bold;
+    padding:5px;
+     /*border: 1px solid white;*/
+}
+
+tbody tr:nth-child(odd) {
+    background: #FFF5D2;
+}
+tbody tr:nth-child(even) {
+    background: #EAF5F5;
+}
+   
+   
+/*table.imagetable 
+{
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.imagetable th 
+{
+    background:#b5cfd2 url('cell-blue.jpg');
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}
+table.imagetable td 
+{
+    background:#dcddc0 url('cell-grey.jpg');
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}*/
