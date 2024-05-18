@@ -60,10 +60,11 @@ function registrar(){
     let inputMateria3 = document.getElementById("txtMateria3").value;
     let nuevoAlumno = new Student(inputNombre,inputEdad, inputGenero, inputEmail, inputFacultad, inputPassword, inputMateria1, inputMateria2, inputMateria3);
     if(isValid(nuevoAlumno)){
-        students.push(nuevoAlumno);
-        console.log(students);
-        displayCards();
-        displayTable();
+        //students.push(nuevoAlumno);
+        insertToDataBase(nuevoAlumno);
+       // console.log(students);
+        //displayCards();
+       // displayTable();
     }else{
         alert("Por favor completa los campos");
     }
@@ -71,9 +72,40 @@ function registrar(){
 
 function init(){
     let student1 = new Student("Samuel",99,"M","sam@gmail.com","Arquitectura","123456",10,10,9);
-    students.push(student1);
-    displayCards();
-    displayTable();
+    //students.push(student1);
+    //insertToDataBase(nuevoAlumno);
+    //displayCards();
+    //displayTable();
+}
+
+function insertToDataBase(newStudent)
+{
+$.ajax({
+url:"./app/register.php",
+method:"POST",
+data:{
+    name:newStudent.name,
+    age:newStudent.age
+
+},
+datatype:"json",
+success:function(response){
+    if(response.success){
+        console.log(response    );
+        setTimeout(function(){
+                location.reload();
+
+        },1000);
+    
+    }
+
+},
+error:function(xhr, status, error){
+    console.log("Error de conexion");
+    //console.error(error);
+}   
+
+});
 }
 
 window.onload=init;// espera a rendirizar el HTML

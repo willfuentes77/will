@@ -1,10 +1,10 @@
-function displayCards(){
+function displayCards(student){
   let card="";
   
-  for (let i=0;i<students.length;i++){
-      let student=students[i];
-      card+=`
-  <div class='student'>
+  //for (let i=0;i<students.length;i++){
+    //  let student=students[i];
+      card=`
+  <div id="${student.id}" class='student'>
   <h4> Nombre: ${student.name}</h4>
   <p> Edad: ${student.age}</p>
   <p> Genero: ${student.genero}</p>
@@ -16,9 +16,32 @@ function displayCards(){
   <button>Eliminar</button>
   </div>
   `;
+  //}
+  document.getElementById("studentList").innerHTML+=card;
   }
-  document.getElementById("studentList").innerHTML=card;
-  }
+
+  function searchToDataBase(){
+$.ajax({
+    url:"./app/get_students.php",
+    type:"GET",
+    datatype:"json",
+    success:function(response){
+
+      console.log(response);
+      if(response.success){
+        console.log(response.data);
+        response.data.array.forEach(displayCards);
+      } else{
+        console.log("Error en la respuesta");
+      }
+      
+    },
+    error:function()
+    {
+
+    }
+})
+}
   
   function displayTable(){
       let tabla="";
