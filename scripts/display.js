@@ -30,18 +30,23 @@ $.ajax({
       console.log(response);
       if(response.success){
         console.log(response.data);
-        response.data.array.forEach(displayCards);
+        response.data.forEach(displayCards);
       } else{
         console.log("Error en la respuesta");
       }
       
     },
-    error:function()
-    {
-
+    error:function(xrh, status, error) {
+console.log(error);
     }
 })
 }
+
+function init(){
+  searchToDataBase();
+}
+
+window.onload=init;
   
   function displayTable(){
       let tabla="";
