@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     if($conn->connect_error){
         die("Error de conexion de la base de datos". $conn->connect_error);
     }
-    $query = "SELECT id, name, age FROM estudiantes";
+    $query = "SELECT id, name, age, genero, email, facultad, password, materia1, materia2, materia3 FROM estudiantes";
 
     $stmt=$conn->prepare($query);
     $stmt->execute();
@@ -26,7 +26,14 @@ while($row = $result->fetch_assoc()){
     $data[] = array (
         "id"=>$row["id"],
         "name"=>$row["name"],
-        "age"=>$row["age"]
+        "age"=>$row["age"],
+        "genero"=>$row["genero"],
+        "email"=>$row["email"],
+        "facultad"=>$row["facultad"],
+        "password"=>$row["password"],
+        "materia1"=>$row["materia1"],
+        "materia2"=>$row["materia2"],
+        "materia3"=>$row["materia3"]
     );
 }
 echo json_encode(array("success"=>true, "data"=>$data));

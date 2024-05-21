@@ -51,8 +51,8 @@ window.onload=init;
   function displayTable(){
       let tabla="";
       
-      for (let i=0;i<students.length;i++){
-          let student=students[i];
+      //for (let i=0;i<students.length;i++){
+        //  let student=students[i];
           tabla+=`
           <table class='tabla'>
           <caption>${student.name}</caption>
@@ -90,7 +90,7 @@ window.onload=init;
     </tr>
         </table></br>
       `;
-      }
+      //}
       document.getElementById("studentTable").innerHTML=tabla;
       }
   

@@ -85,9 +85,15 @@ url:"./app/register.php",
 method:"POST",
 data:{
     name:newStudent.name,
-    age:newStudent.age
-
-},
+    age:newStudent.age,
+    genero:newStudent.genero,
+    email:newStudent.email,
+    facultad:newStudent.facultad,
+    password:newStudent.password,
+    materia1:newStudent.materia1,
+    materia2:newStudent.materia2,
+    materia3:newStudent.materia3
+    },
 datatype:"json",
 success:function(response){
     if(response.success){
