@@ -30,7 +30,9 @@ $.ajax({
       console.log(response);
       if(response.success){
         console.log(response.data);
-        response.data.forEach(displayCards);
+        //response.data.forEach(displayCards);
+        //response.data.data(displayTable);
+        response.data.forEach(displayTableBody);
       } else{
         console.log("Error en la respuesta");
       }
@@ -47,22 +49,42 @@ function init(){
 }
 
 window.onload=init;
+
+
+function displayTableBody(student){
+  let body="";
   
-  function displayTable(){
+  body=`
+      <tr>
+      <td>${student.name}</td>
+      <td>${student.age}</td>
+      <td>${student.genero}</td>
+      <td>${student.email}</td>
+      <td>${student.facultad}</td>
+      <td>${student.materia1}</td>
+      <td>${student.materia2}</td>
+      <td>${student.materia3}</td>
+    </tr>
+    `;
+   
+  document.getElementById("studentTableBody").innerHTML+=body;
+  }
+  
+  function displayTable(student){
       let tabla="";
       
       //for (let i=0;i<students.length;i++){
         //  let student=students[i];
-          tabla+=`
-          <table class='tabla'>
+          tabla=`
+          <table id="${student.id}" class='tabla'>
           <caption>${student.name}</caption>
           <tr>
             <td style='font-weight: bold'>Nombre:</td>
             <td>${student.name}</td>
           </tr>
           <tr>
-          <td style='font-weight: bold'>Edad:</td>
-          <td>${student.edad}</td>
+          <td style='font-weight: bold'>Edad:</td>    
+          <td>${student.age}</td>
         </tr>
         <tr>
             <td style='font-weight: bold'>Genero:</td>
@@ -91,7 +113,7 @@ window.onload=init;
         </table></br>
       `;
       //}
-      document.getElementById("studentTable").innerHTML=tabla;
+      document.getElementById("studentTable").innerHTML+=tabla;
       }
   
   

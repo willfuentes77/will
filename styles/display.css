@@ -42,7 +42,13 @@ tbody tr:nth-child(even) {
     background: #EAF5F5;
 }
    
-   
+tbody {
+    background-color: #e4f0f5;
+  }
+  
+  tbody > tr > td:last-of-type {
+    text-align: center;
+  }
 /*table.imagetable 
 {
     font-family: verdana,arial,sans-serif;

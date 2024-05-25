@@ -23,7 +23,50 @@
 
     <main class="container">
         <h3>Registra un alumno nuevo</h3>
-        <div>
+        <table>
+            <tr>
+              <td>Nombre</td>
+              <td><input type="text" id="txtNombre"></td>
+            </tr>
+            <tr>
+                <td>Edad:</td>
+                <td><input type="number" id="txtEdad"></td>
+              </tr>
+              <tr>
+                <td>Genero:</td>
+                <td><input type="text" id="txtGenero"></td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td><input type="email" id="txtEmail"></td>
+              </tr>
+              <tr>
+                <td>Facultad:</td>
+                <td>  <select name="facultad" id="cmbFacultad">
+                    <option value="0">--Selecciona una opcion--</option>
+                    <option value="FCA">FCA</option>
+                    <option value="FCQI">FCQI</option>
+                    <option value="FCH">FCH</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td> <input type="password" id="txtPassword"></td>
+              </tr>
+              <tr>
+                <td>Materia 1:</td>
+                <td><input type="number" id="txtMateria1"></td>
+              </tr>
+              <tr>
+                <td>Materia 2:</td>
+                <td><input type="number" id="txtMateria2"></td>
+              </tr>
+              <tr>
+                <td>Materia 3:</td>
+                <td><input type="number" id="txtMateria3"></td>
+              </tr>
+          </table>
+        <!--<div>
             <div>
                 <label>Nombre:</label>
                 <input type="text" id="txtNombre">
@@ -65,12 +108,13 @@
                 <label>Materia 3:</label>
                 <input type="number" id="txtMateria3">
             </div>
-        </div>
+        </div> -->
+        <br>
             <button onclick="registrar()">Registrar</button>
           
             <h3>Estudiantes registrados</h3>
          <div class="container" id="studentList"></div>
-         <div id="studentTable"></div>
+         <!--<div id="studentTable"></div>-->
     </main>
         <script src="./scripts/register.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
