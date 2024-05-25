@@ -1,3 +1,4 @@
+//display.js
 function displayCards(student){
   let card="";
   
@@ -70,7 +71,7 @@ function displayTableBody(student){
   document.getElementById("studentTableBody").innerHTML+=body;
   }
   
-  function displayTable(student){
+  /*function displayTable(student){
       let tabla="";
       
       //for (let i=0;i<students.length;i++){
@@ -114,6 +115,6 @@ function displayTableBody(student){
       `;
       //}
       document.getElementById("studentTable").innerHTML+=tabla;
-      }
+      }*/
   
   
