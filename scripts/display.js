@@ -9,7 +9,7 @@ function displayCards(student){
   <h4> Nombre: ${student.name}</h4>
   <p> Edad: ${student.age}</p>
   <p> Genero: ${student.genero}</p>
-  <p> Email: ${student.email}</p>
+  <p> Email: ${student.email}</p> q q
   <p> Facultad: ${student.facultad}</p>
   <p> Materia 1: ${student.materia1}</p>
   <p> Materia 2: ${student.materia2}</p>

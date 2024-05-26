@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $result = $stmt->get_result();
 
     if($result->num_rows > 0){
-$data[] = array();
+$data = array();
 while($row = $result->fetch_assoc()){
     $data[] = array (
         "id"=>$row["id"],
