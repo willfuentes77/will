@@ -102,6 +102,7 @@ success:function(response){
                 location.reload();
 
         },1000);
+        alert("Infomación guardada");
     
     }
 
